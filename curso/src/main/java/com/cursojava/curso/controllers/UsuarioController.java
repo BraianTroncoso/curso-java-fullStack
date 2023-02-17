@@ -48,8 +48,10 @@ public class UsuarioController {
         return usuario;
     }
     @RequestMapping(value = "usuarios")
-    public List<Usuario> getUsuarios(@PathVariable Long id){ //tengo un error del metodo getUsuarios
+    public List<Usuario> getUsuarios(@PathVariable Long id){
         List<Usuario> usuarios = new ArrayList<>();
+
+
         Usuario usuario = new Usuario();
         usuario.setNombre("Braian");
         usuario.setApellido("Troncoso");

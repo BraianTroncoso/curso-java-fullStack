@@ -4,7 +4,6 @@ $(document).ready(function() {
   $('#usuarios').DataTable();
 });
 
-
 async function cargarUsuarios(){
     const request = await fetch('usuarios', {
       method: 'GET',
@@ -18,7 +17,7 @@ async function cargarUsuarios(){
     let listadoHtml = '';
     for (let usuario of usuarios){
 
-        let usuarioHtml = '<tr><td>'+usuario.id+'</td><td>'+usuario.nombre+ ' ' +usuario.apellido+
+        let usuarioHtml = '<tr><td>123</td><td>'+usuario.nombre+ ' ' +usuario.apellido+
                             '</td><td>'+usuario.email+
                             '</td><td>'+usuario.telefono+
                             '</td><td><a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a></td></tr>'
@@ -29,6 +28,11 @@ async function cargarUsuarios(){
 
 document.querySelector('#usuarios tbody').outerHTML = listadoHtml;
 }
+
+
+
+
+
 /*
 REVISAR PROBLEMA DE SINTAXIS, CURSO JAVA FULLSTACK COMPLETO SPRINGBOOT, HIBERNATE, JWT, API REST MIN 1:55:21
 */
