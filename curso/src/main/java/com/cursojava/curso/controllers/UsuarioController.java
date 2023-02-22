@@ -50,8 +50,8 @@ public class UsuarioController {
         usuario.setTelefono("019288382");
         return usuario;
     }
-    @RequestMapping(value = "usuarios")
-    public List<Usuario> getUsuarios(@PathVariable Long id){
+    @RequestMapping(value = "usuario")
+    public List<Usuario> getUsuarios(){
         List<Usuario>usuarios = new ArrayList<>();
 
 
@@ -64,24 +64,35 @@ public class UsuarioController {
 
         Usuario usuario2 = new Usuario();
         usuario2.setNombre("Javier");
-        usuario2.setApellido("Troncosso");
+        usuario2.setApellido("Troncoso");
         usuario2.setEmail("javier@gmail.com");
         usuario2.setTelefono("019288382");
         usuario2.setId(4L);
 
         Usuario usuario3 = new Usuario();
         usuario3.setNombre("Lautaro");
-        usuario3.setApellido("Troncose");
+        usuario3.setApellido("Troncoso");
         usuario3.setEmail("Lautaro@gmail.com");
         usuario3.setTelefono("019288382");
         usuario3.setId(5L);
 
+        Usuario usuario4 = new Usuario();
+        usuario4.setNombre("Mia");
+        usuario4.setApellido("Troncoso");
+        usuario4.setEmail("Lautaro@gmail.com");
+        usuario4.setTelefono("019288382");
+        usuario4.setId(6L);
 
         usuarios.add(usuario);
         usuarios.add(usuario2);
         usuarios.add(usuario3);
+        usuarios.add(usuario4);
         return usuarios;
 
     }
 
 }
+/**
+ * Googlear dudas sobre patch, super, y sintaxis con el mismo nombre de Usuario.
+ * Practicar el mismo ejercicio en python
+ */

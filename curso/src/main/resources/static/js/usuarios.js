@@ -5,12 +5,12 @@ $(document).ready(function() {
 });
 
 async function cargarUsuarios(){
-   const request = await fetch('usuarios', {
+   const request = await fetch('usuario', {
      method: 'GET',
      headers: {
        'Accept': 'application/json',
        'Content-Type': 'application/json'
-     },
+     }
    });
    const usuarios = await request.json();
 
