@@ -1,8 +1,6 @@
 package com.cursojava.curso.controllers;
 
 import com.cursojava.curso.models.Usuario;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,7 +48,7 @@ public class UsuarioController {
         usuario.setTelefono("019288382");
         return usuario;
     }
-    @RequestMapping(value = "usuario")
+    @RequestMapping(value = "usuarios")
     public List<Usuario> getUsuarios(){
         List<Usuario>usuarios = new ArrayList<>();
 
@@ -95,4 +93,5 @@ public class UsuarioController {
 /**
  * Googlear dudas sobre patch, super, y sintaxis con el mismo nombre de Usuario.
  * Practicar el mismo ejercicio en python
+ * Ver plugins para saber pq no me funciona
  */

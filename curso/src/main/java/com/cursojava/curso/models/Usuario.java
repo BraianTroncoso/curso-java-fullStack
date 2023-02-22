@@ -1,58 +1,37 @@
 package com.cursojava.curso.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@ToString @EqualsAndHashCode
+@Table(name = "usuarios")
 public class Usuario {
-    private String nombre;
-    private String apellido;
-    private String email;
-    private String telefono;
-    private String password;
+
+    @Id
+    @Getter @Setter @Column(name = "id")
     private Long id;
 
-    public String getNombre() {
-        return nombre;
-    }
+    @Getter @Setter @Column(name = "nombre")
+    private String nombre;
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    @Getter @Setter @Column(name = "apellido")
+    private String apellido;
 
-    public String getApellido() {
-        return apellido;
-    }
+    @Getter @Setter @Column(name = "email")
+    private String email;
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    @Getter @Setter @Column(name = "telefono")
+    private String telefono;
 
-    public String getEmail() {
-        return email;
-    }
+    @Getter @Setter @Column(name = "password")
+    private String password;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
