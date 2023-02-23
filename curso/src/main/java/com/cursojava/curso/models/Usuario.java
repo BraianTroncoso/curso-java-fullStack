@@ -8,13 +8,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-@Entity
+// Lombok es una Libreria que hace anotaciones para resumir código, get, set, toStr, Equal...
+@Entity // Indicamos que es una entidad que hace referencia a la base de datos
 @ToString @EqualsAndHashCode
-@Table(name = "usuarios")
+@Table(name = "usuarios") //Indicamos que tabla tiene que utilizar EntityManager
 public class Usuario {
 
-    @Id
+    @Id // Indicamos que es la primary key
     @Getter @Setter @Column(name = "id")
     private Long id;
 

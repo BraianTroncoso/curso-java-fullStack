@@ -1,7 +1,12 @@
 package com.cursojava.curso.controllers;
 
+import com.cursojava.curso.dao.UsuarioDao;
 import com.cursojava.curso.models.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -10,8 +15,10 @@ import java.util.List;
 
 @RestController
 public class UsuarioController {
+    @Autowired
+    private UsuarioDao usuarioDao; // Esto se llama inyeccion de dependencias
 
-    @RequestMapping(value = "usuario/{id}")
+    @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.GET)
         public Usuario getUsuario(){
         Usuario usuario = new Usuario();
         usuario.setNombre("Braian");
@@ -20,6 +27,10 @@ public class UsuarioController {
         usuario.setTelefono("019288382");
         usuario.setId(1L);
         return usuario;
+    }
+    @RequestMapping(value = "api/usuarios")
+    public List<Usuario> getUsuarios(){
+        return usuarioDao.getUsuarios();
     }
     @RequestMapping(value = "usuario123")
     public Usuario modificar(){
@@ -30,14 +41,9 @@ public class UsuarioController {
         usuario.setTelefono("019288382");
         return usuario;
     }
-    @RequestMapping(value = "usuario432")
-    public Usuario eliminar(){
-        Usuario usuario = new Usuario();
-        usuario.setNombre("Braian");
-        usuario.setApellido("Troncoso");
-        usuario.setEmail("troncosobraianaxel@gmail.com");
-        usuario.setTelefono("019288382");
-        return usuario;
+    @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.DELETE)
+    public void eliminar(@PathVariable Long id){
+        usuarioDao.eliminar(id);
     }
     @RequestMapping(value = "usuario654")
     public Usuario buscar(){
@@ -48,7 +54,7 @@ public class UsuarioController {
         usuario.setTelefono("019288382");
         return usuario;
     }
-    @RequestMapping(value = "usuarios")
+   /* @RequestMapping(value = "usuarios")
     public List<Usuario> getUsuarios(){
         List<Usuario>usuarios = new ArrayList<>();
 
@@ -88,10 +94,10 @@ public class UsuarioController {
         return usuarios;
 
     }
-
+*/
 }
 /**
  * Googlear dudas sobre patch, super, y sintaxis con el mismo nombre de Usuario.
- * Practicar el mismo ejercicio en python
- * Ver plugins para saber pq no me funciona
+ * Practicar el mismo ejercicio en python(ponele creo que es con dyango)
+ * Ver plugins para que me explique el codigo
  */

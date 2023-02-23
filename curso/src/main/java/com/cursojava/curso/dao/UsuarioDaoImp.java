@@ -12,12 +12,18 @@ import java.util.List;
 public class UsuarioDaoImp implements UsuarioDao {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager entityManager; // Nos sirve para hacer la conexión la BDD
 
     @Transactional
     @Override
     public List<Usuario> getUsuarios() {
-        String query = "FROM Usuario";
+        String query = "FROM Usuario"; // Hacemos la consulta, usuario vendria ser el nombre de la clase en Java
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public void eliminar(Long id) {
+        Usuario usuario = entityManager.find(Usuario.class, id);
+        entityManager.remove(usuario);
     }
 }
