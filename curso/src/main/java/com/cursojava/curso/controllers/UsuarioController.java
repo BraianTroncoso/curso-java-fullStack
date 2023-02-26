@@ -12,6 +12,7 @@ import java.util.List;
 //2:40:20 me quede, ver el tema de freelance y seguir creando proyectos con js y ver las clases para aumentar la lógica
 //lo bueno y copado que oficialmente ya estoy programando y entendiendo bien todo, acordate los complementos para
 // que te explique los codigos y leer los de los chat, wpp e insta
+//2:54
 @RestController
 public class UsuarioController {
     @Autowired
