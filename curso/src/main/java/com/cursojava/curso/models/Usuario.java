@@ -1,18 +1,19 @@
 package com.cursojava.curso.models;
 
-import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-// Lombok es una Libreria que hace anotaciones para resumir código, get, set, toStr, Equal...
-@Entity // Indicamos que es una entidad que hace referencia a la base de datos
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuarios")
 @ToString @EqualsAndHashCode
-@Table(name = "usuarios") //Indicamos que tabla tiene que utilizar EntityManager
 public class Usuario {
 
-    @Id // Indicamos que es la primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter @Column(name = "id")
     private Long id;
 
